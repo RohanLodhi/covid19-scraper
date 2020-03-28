@@ -31,9 +31,27 @@ sheet1 = wb.add_sheet('Sheet 1')
 i = 1
 j = 1
 for line in lines:
-    sheet1.write(i, j, line)
+    print(line)
+    if j%13 == 0 or j == 1 or j%12 == 0:
+        cell = line
+
+    else:
+        line = line.replace(",","")
+        line = line.replace("+","")
+        if line == "" or line == "\n":
+            cell = line
+        
+        else:
+            line = line[:-1]
+            try:
+                cell = float(line)
+
+            except:
+                pass
+
+    sheet1.write(i, j, cell)
     j+=1
-    if j%11 == 0:
+    if j%13 == 0:
         j = 1
         i+=1
 
