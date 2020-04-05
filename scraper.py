@@ -31,7 +31,7 @@ sheet1 = wb.add_sheet('Sheet 1')
 i = 1
 j = 1
 for line in lines:
-    print(line)
+    #print(line)
     if j%13 == 0 or j == 1 or j%12 == 0:
         cell = line
 
